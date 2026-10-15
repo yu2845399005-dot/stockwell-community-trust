@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-mode="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#eff8fc">
+  <meta name="description" content="Stockwell Community Trust — an interactive light and colour study. Explore a frosted glass sculpture from day to dusk to night.">
+  <title>STOCKWELL COMMUNITY TRUST — Light Study</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+<main id="chroma-day-night" aria-label="Stockwell Community Trust interactive light study">
+  <div class="chroma-scene">
+    <header class="chroma-header">
+      <div>
+        <p class="chroma-eyebrow">CHROMA · LIGHT STUDY</p>
+        <h1>STOCKWELL<br>COMMUNITY TRUST</h1>
+      </div>
+      <span class="chroma-edition" aria-hidden="true">LIGHT STUDY<br>DAY / DUSK / NIGHT</span>
+    </header>
+    <div class="chroma-body">
+      <section class="chroma-stage" aria-label="Interactive 3D sculpture">
+        <div class="chroma-halo" aria-hidden="true"></div>
+        <canvas role="img" aria-describedby="chroma-drag-hint" aria-label="A frosted glass disc on two wooden columns. Drag the sculpture or use the angle sliders to rotate it.">Use a browser that supports Canvas to explore this sculpture.</canvas>
+        <span id="chroma-drag-hint" class="chroma-drag-hint"><span class="chroma-drag-symbol" aria-hidden="true">↔</span> Drag to rotate</span>
+      </section>
+      <section class="chroma-controls" aria-label="Light, participants and viewing angle">
+        <div class="chroma-control-area">
+          <h2 class="chroma-label">TIME OF DAY</h2>
+          <div class="chroma-switch" role="group" aria-label="Choose Day, Dusk or Night">
+            <span class="chroma-thumb" aria-hidden="true"></span>
+            <button type="button" data-mode="day" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg><span>Day</span></button>
+            <button type="button" data-mode="dusk" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 17h18M5 21h14M7 17a5 5 0 0 1 10 0M12 2v5m-3-3 3 3 3-3M3 11l2 1m14 0 2-1"/></svg><span>Dusk</span></button>
+            <button type="button" data-mode="night" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 14A9 9 0 0 1 10 3.4 9 9 0 1 0 20.6 14Z"/></svg><span>Night</span></button>
+          </div>
+          <p class="chroma-caption" aria-live="polite">Soft, pale colour</p>
+        </div>
+        <div class="chroma-people-control">
+          <label for="chroma-people" class="chroma-range-label"><span>Participants</span><output id="chroma-people-value" for="chroma-people" aria-live="polite">5 people</output></label>
+          <input id="chroma-people" type="range" min="0" max="20" step="1" value="5" aria-label="Number of participants" aria-describedby="chroma-people-hint">
+          <div class="chroma-range-limits" aria-hidden="true"><span>0</span><span>20</span></div>
+          <p id="chroma-people-hint" class="chroma-people-hint">One person, one figure, one coloured piece.</p>
+        </div>
+        <div class="chroma-view-controls" aria-label="Viewing angle">
+          <h2 class="chroma-label">VIEWING ANGLE</h2>
+          <label><span class="chroma-range-label"><span>Rotation</span><output data-value="yaw">−14°</output></span><input type="range" min="-180" max="180" value="-14" step="1" data-angle="yaw" aria-label="Rotation angle"></label>
+          <label><span class="chroma-range-label"><span>Tilt</span><output data-value="tilt">50°</output></span><input type="range" min="0" max="85" value="50" step="1" data-angle="tilt" aria-label="Tilt angle"></label>
+        </div>
+      </section>
+    </div>
+    <footer class="chroma-footer"><span>Wooden columns · Frosted glass</span><span class="chroma-phase">DAYLIGHT</span></footer>
+  </div>
+</main>
+</body>
+</html>
